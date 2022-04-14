@@ -1,0 +1,13 @@
+.header{
+    
+    width:100vw;
+    height:100px;
+
+}   
+.socksLogo{
+    width:10vw;
+    height:100px;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
