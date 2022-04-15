@@ -6,7 +6,7 @@ function Header() : JSX.Element {
     return(
         <div id="header" className="header">
             <img src={urls[pos]} className="socksLogo"/>
-
+            <h1 className="socksTitle">У нас носки как от бабушки!</h1>
 
 
         </div>
