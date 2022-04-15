@@ -1,42 +1,20 @@
-import products from "./products";
 import "./Store.css"
+import Product from "./interfaces"
+
 // эта функция отрисовывает из переданного ей объекта товары ввиде карточек
 function Store(props : any) : JSX.Element {
-    let stylesOfBody = {
-        width:"200px",
-        height:"350px",
-        border: "3px solid lightgrey",
-        display: "inline-block",
-        borderRadius: "10px",
-        margin: "10px"
-    }
-    let stylesOfImg = {
-        width:"200px",
-        height:"243px",
-    }
-    let stylesOfTitle = {
-        width:"200px",
-        height:"50px",
-        margin: "0px",
-        textAlign: 'center' as 'center'
-    }
-    let stylesOfButton = {
-        width:"200px",
-        height:"50px",
-        fontSize: "40px",
-        backgroundColor: "lightgreen",
-        border: "0px solid",
-        borderRadius: "10px",
-    }
-
-
+   // if (typeof props.products === "Product"){return <h1>TYPE ERROR</h1>}
 
     let toRender : Array<JSX.Element> = [];  
-    products.forEach(product => {
-        toRender.push(<div key={product.id} style={stylesOfBody}>
-            <h2 style={stylesOfTitle}>{product.name + " " + product.price + "$"}</h2>
-            <button style={stylesOfButton}>Купить</button>
-            <img style={stylesOfImg} src={product.img}/>
+    props.products.forEach((product : Product) => {
+
+        if (product.name.length > 12 ) return // чтобы имя всегда влезало на строку
+        
+        toRender.push(<div key={product.id} className="productBody">
+            <h2 className="name">{product.name} </h2>
+            <h2 className="price">{product.price + " $"}</h2>
+            <button className="buyButton">Купить</button>
+            <img className="productImg" src={product.img}/>
         
         </div>)
     })
