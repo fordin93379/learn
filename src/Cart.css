@@ -1,0 +1,47 @@
+.cartIcon{
+    width: 100px;
+    height: 100px;
+    z-index: 11;
+    position: relative;
+    right: 10px;
+}
+.cartWindow{
+    background-color: white;
+    
+    z-index: 10;
+    position: absolute;
+    top: 0vh;
+    left:100vw;
+    width:0vw;
+    height: 0vh;
+}
+.cart{
+    width: 100px;
+    height: 100px;
+    float: right;
+}
+
+@keyframes close{
+    from {
+        left: 0vw;
+        width: 100vw;
+        height: 100vh;
+        
+    }
+    to{
+        left: 100vw;
+        width:0vw;
+        height: 0vh;    
+    }    
+}
+@keyframes open {
+    from {
+        width:0vw;
+        height: 0vh;
+    }
+    to{
+        left: 0vw;
+        width: 100vw;
+        height: 100vh;
+    }
+}
