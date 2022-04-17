@@ -1,47 +1,66 @@
-.cartIcon{
-    width: 100px;
-    height: 100px;
-    z-index: 11;
-    position: relative;
-    right: 10px;
+.d{
+    display: inline-block;
+    float: left;
 }
-.cartWindow{
-    background-color: white;
+.cartHeader{
+    color: darkslategrey;
+    font-family: 'Times New Roman', Times, serif; 
+    font-style: italic; 
+}
+.windowOfProducts{
+    width: 450px;
+    min-height: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 30px;
+    border: 6px solid lightgrey;
     
-    z-index: 10;
-    position: absolute;
-    top: 0vh;
-    left:100vw;
-    width:0vw;
-    height: 0vh;
 }
-.cart{
+.payButton{
+    border: 0px solid greenyellow;
+    width: 450px;
+    height: 70px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    background-color: green;
+    transition: 0.5s;
+    font-size: 30px;
+    color: azure;
+}
+.payButton:hover{
+    background-color: yellowgreen;
+    
+}
+.productList{
+    margin-top:10px;
+    width: 450px;
+    min-height: 620px;
+    border-bottom-left-radius: 30px; 
+    border-bottom-right-radius: 30px;
+}
+.cartItem{
+    border-bottom: 3px solid lightgrey;
+    height: 100px;
+    width:450px;
+}
+.cartItemImage{
     width: 100px;
     height: 100px;
-    float: right;
 }
+.cartItemName{
+    height: 50px;
+    width: 200px;
 
-@keyframes close{
-    from {
-        left: 0vw;
-        width: 100vw;
-        height: 100vh;
-        
-    }
-    to{
-        left: 100vw;
-        width:0vw;
-        height: 0vh;    
-    }    
+
 }
-@keyframes open {
-    from {
-        width:0vw;
-        height: 0vh;
-    }
-    to{
-        left: 0vw;
-        width: 100vw;
-        height: 100vh;
-    }
+.cancelButton{
+    margin-top: 20px;
+    float: right;
+    margin-right:30px;
+    border:none;
+    transform:rotate(90deg);
+    font-size: 30px;
+    color:white;
+    background-color:red;
+    border-radius: 40px;
 }
