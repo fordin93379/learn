@@ -1,8 +1,7 @@
 import "./CartWindow.css"
 import "./Cart.css"
 import Product from "./interfaces"
-import products from "./products"
-import FuncGenerator from "./FuncGenerator"
+import {Component} from "react"
 let isOpen : boolean = false;
 function cartWindow() : void {
     isOpen = !isOpen;
@@ -13,19 +12,37 @@ function cartWindow() : void {
         document.getElementById("cartWindow")!.style.animation = "close 0.7s forwards 1";
     }
 }
-function Cart(): JSX.Element {
 
+interface Props {
+    products : Array<Product>;
+}
 
+class Cart extends Component<Props, {products: Array<Product>}> {
+    constructor(props : any){
+        super(props);
+        this.state = {products : props.products}
+    }
+    // УРА! Смог сделать через state, надеюсь хоть тут не костылей!))))
+    FuncGenerator(elementId: string) :  () => void {
+        return () => {
+            let id = elementId;
+            let arrayToSplice : Array<Product> = this.state.products
+            arrayToSplice.splice(parseInt(id), 1)
+            this.setState({products: arrayToSplice});
+        }
+    }
 
-
+    render() : JSX.Element{
+    
     let toRender : Array<JSX.Element> = [];
     // className d для добавления всем элементам display: inline-block;
-    products.forEach((product : Product, index : number) => {
+    
+    this.state.products.forEach((product : Product, index : number) => {
         toRender.push(<div className='cartItem' id={index.toString()}>
             <img className='cartItemImage d' src={product.img}/>
             <h2 className='cartItemName d'>{product.name}</h2>
             <h2 className='cartItemPrice d'>{product.price} $</h2>
-            <button className='cancelButton' onClick={FuncGenerator(index.toString())}>x</button>
+            <button className='cancelButton' onClick={this.FuncGenerator(index.toString()).bind(this)}>x</button>
         </div>)
     })
 
@@ -45,6 +62,8 @@ function Cart(): JSX.Element {
         
         </div>
     </div>;
+    }
 }
+
 
 export default Cart
