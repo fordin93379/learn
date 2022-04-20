@@ -2,6 +2,7 @@ import "./CartWindow.css"
 import "./Cart.css"
 import Product from "./interfaces"
 import products from "./products"
+import FuncGenerator from "./FuncGenerator"
 let isOpen : boolean = false;
 function cartWindow() : void {
     isOpen = !isOpen;
@@ -19,12 +20,12 @@ function Cart(): JSX.Element {
 
     let toRender : Array<JSX.Element> = [];
     // className d для добавления всем элементам display: inline-block;
-    products.forEach((product : Product) => {
-        toRender.push(<div className='cartItem'>
+    products.forEach((product : Product, index : number) => {
+        toRender.push(<div className='cartItem' id={index.toString()}>
             <img className='cartItemImage d' src={product.img}/>
             <h2 className='cartItemName d'>{product.name}</h2>
             <h2 className='cartItemPrice d'>{product.price} $</h2>
-            <button className='cancelButton'>x</button>
+            <button className='cancelButton' onClick={FuncGenerator(index.toString())}>x</button>
         </div>)
     })
 

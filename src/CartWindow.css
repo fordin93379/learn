@@ -7,7 +7,6 @@
 }
 .cartWindow{
     background-color: white;
-    
     z-index: 10;
     position: absolute;
     top: 0vh;
