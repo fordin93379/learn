@@ -22,8 +22,13 @@ class Cart extends Component<Props, {products: Array<Product>}> {
         super(props);
         this.state = {products : props.products}
     }
+    addProduct(product : Product){
+        let newArray : Array<Product> = this.state.products
+        newArray.push(product)
+        this.setState({products: newArray});
+    }
     // УРА! Смог сделать через state, надеюсь хоть тут не костылей!))))
-    FuncGenerator(elementId: string) :  () => void {
+    funcGenerator(elementId: string) :  () => void {
         return () => {
             let id = elementId;
             let arrayToSplice : Array<Product> = this.state.products
@@ -42,7 +47,7 @@ class Cart extends Component<Props, {products: Array<Product>}> {
             <img className='cartItemImage d' src={product.img}/>
             <h2 className='cartItemName d'>{product.name}</h2>
             <h2 className='cartItemPrice d'>{product.price} $</h2>
-            <button className='cancelButton' onClick={this.FuncGenerator(index.toString()).bind(this)}>x</button>
+            <button className='cancelButton' onClick={this.funcGenerator(index.toString()).bind(this)}>x</button>
         </div>)
     })
 
