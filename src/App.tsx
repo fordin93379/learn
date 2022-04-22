@@ -1,9 +1,8 @@
 import Header from './Header';
 import './App.css';
-import SideBar from './SideBar';
 import Store from './Store';
 import products from './products';
-import { Component, useRef} from 'react';
+import { Component} from 'react';
 import Product from './interfaces';
 import Cart from "./Cart"
 class App extends Component<{}, {products:Array<Product>}> {

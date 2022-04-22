@@ -30,13 +30,13 @@
     to{
         left: 100vw;
         width:0vw;
-        height: 0vh;    
+        height: 100vh;    
     }    
 }
 @keyframes open {
     from {
         width:0vw;
-        height: 0vh;
+        height: 100vh;
     }
     to{
         left: 0vw;

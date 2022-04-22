@@ -2,7 +2,7 @@ import "./CartWindow.css"
 import "./Cart.css"
 import Product from "./interfaces"
 import {Component} from "react"
-let isOpen : boolean = false;
+
 
 
 interface Props {
@@ -48,7 +48,7 @@ class Cart extends Component<Props, {products: Array<Product>}> {
 
     return <div className="cart">
                 <div id='cartWindow' className='cartWindow'>
-            <h1 className='cartHeader'>Ваши Товары</h1>
+            
             <div className="windowOfProducts">
                 <button className='payButton'>Оплатить</button>
                 <div className='productList'>

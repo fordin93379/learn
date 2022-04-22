@@ -6,8 +6,10 @@
     color: darkslategrey;
     font-family: 'Times New Roman', Times, serif; 
     font-style: italic; 
+    text-align: center;
 }
 .windowOfProducts{
+    margin-top: 100px;
     width: 450px;
     min-height: 700px;
     margin-left: auto;

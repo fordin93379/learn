@@ -1,8 +1,5 @@
 import "./Header.css"
 import urls from "./urls"
-import Cart from "./Cart"
-
-
 import Product from "./interfaces"
 import {Component} from "react"
 let isOpen = false;
@@ -23,9 +20,7 @@ interface input{
     products: Array<Product> 
 }
 class Header extends Component<input>{
-    constructor(props : any){
-        super(props);
-    }
+
     render(){
     let pos : number = Math.floor( Math.random() * urls.length )
 
